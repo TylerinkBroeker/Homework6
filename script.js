@@ -41,16 +41,20 @@ $(document).ready(function () {
             
             var month = date.getMonth() + 1;
             var day = date.getDate() + i + 1;
-            var midDayHumidityStats = (3) + (i * 8);
-            var humidityStats = urlResponse.list[midDayHumidityStats].main.humidity
+            var midDayStats = (3) + (i * 8);
+            var humidityStats = urlResponse.list[midDayStats].main.humidity;
+            var tempStats = urlResponse.list[midDayStats].main.temp;
             var currentDate = "(" + month + "/" + day + "/" + date.getFullYear() + ")";
             var forecastDivs = $("<div id='forecast-" + i + "' class='forecast-div'></div>");
-            var forecastDate = $("<p class=forecast-date>" + currentDate + "</p>");
-            var forecastHumidityStats = $("<p class=humidity-stats>" + humidityStats + "</p>");
-            //console.log(humidityStats);
+            var forecastDate = $("<p class=forecast-date><strong>" + currentDate + "</strong></p>");
+            var forecastTemp = $("<p class='forcast-temp'>Temperature: " + tempStats + " &#8457;</p>");
+            var forecastHumidityStats = $("<p class=humidity-stats>Humidity: " + humidityStats + "%</p>");
+            console.log(tempStats);
+            console.log(forecastTemp);
             $("#five-day-forcast").append(forecastDivs);
             $("#forecast-" + i).append(forecastDate);
-            //$(".forecast-div").append(forecastHumidityStats);
+            $("#forecast-" + i).append(forecastTemp);
+            $("#forecast-" + i).append(forecastHumidityStats);
             
         }
     }
