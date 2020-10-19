@@ -4,9 +4,9 @@ $(document).ready(function () {
     var storedHistory =JSON.parse(localStorage.getItem("searchHistory"));
     var searchHistory = [];
     var date = new Date();
-    var fiveDayForecast = "https://api.openweathermap.org/data/2.5/forecast?q=";
-    var currentWeather = "https://api.openweathermap.org/data/2.5/weather?q=";
-    var uvIndexUrl = "https://api.openweathermap.org/data/2.5/uvi?appid=e6d0338475e8a331b1efa53226cf4edb&";
+    var fiveDayForecast = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=";
+    var currentWeather = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=";
+    var uvIndexUrl = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/uvi?appid=e6d0338475e8a331b1efa53226cf4edb&";
 
     if(storedHistory !== null) {
         for(var i = 0; i < storedHistory.length; i++) {
