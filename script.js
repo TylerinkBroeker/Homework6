@@ -65,7 +65,7 @@ $(document).ready(function () {
             for (var i = 0; i < histArr.length; i++) {
                 var histBtn = $("<button class='hist-btn' value='" + histArr[i] + "'>" + histArr[i] + "</button><br>");
                 $("#history").append(histBtn);
-                //searchHistory.push(histArr[i]);
+
         }
         };
         console.log("searchHistory " + searchHistory);
